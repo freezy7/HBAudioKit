@@ -24,7 +24,6 @@ let package = Package (
                 .linkedFramework("Foundation"),
                 .linkedFramework("AVFoundation"),
                 .linkedFramework("AudioToolbox"),
-                .linkedFramework("algorithm"),
                 .linkedFramework("Accelerate"),
             ]
         )
