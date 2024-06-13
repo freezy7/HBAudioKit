@@ -30,7 +30,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 停止所有录制操作
 - (void)stopRecorderOperationCompletion:(nullable void(^)(void))completion;
 
-- (void)exchangePCMToMP3Completion:(void(^)(BOOL success))completion;
+- (void)exchangePCMToMP3Completion:(void(^)(BOOL success, NSString *outputPath))completion;
 
 /// 将录制的音频文件转换为MP3格式
 + (void)exchangePCMToMP3WithFilePath:(NSString *)filePath resultPath:(NSString *)resultPath completion:(void(^)(BOOL success))completion;

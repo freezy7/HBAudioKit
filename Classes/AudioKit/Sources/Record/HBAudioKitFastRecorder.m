@@ -338,10 +338,14 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
   }
 }
 
-- (void)exchangePCMToMP3Completion:(void(^)(BOOL success))completion {
+- (void)exchangePCMToMP3Completion:(void(^)(BOOL success, NSString *outputPath))completion {
     NSString *replaceString = [NSString stringWithFormat:@"%.0f.mp3", [[NSDate date] timeIntervalSince1970]];
     NSString *outputPath = [self.savePath stringByReplacingOccurrencesOfString:@"audio.pcm" withString:replaceString];
-    [self.class exchangePCMToMP3WithFilePath:self.savePath resultPath:outputPath completion:completion];
+    [self.class exchangePCMToMP3WithFilePath:self.savePath resultPath:outputPath completion:^(BOOL success) {
+        if (completion) {
+            completion(success, outputPath);
+        }
+    }];
 }
 
 #pragma mark - M4AtoMP3
