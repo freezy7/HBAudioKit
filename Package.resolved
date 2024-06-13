@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "libmp3lame",
+        "repositoryURL": "https://github.com/freezy7/libmp3lame",
+        "state": {
+          "branch": null,
+          "revision": "40b4fd5e46683c3fdf4192d8732ccbcc51f096c6",
+          "version": "3.100.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

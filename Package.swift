@@ -2,19 +2,21 @@
 
 import PackageDescription
 
-let package = Package(
+let package = Package (
     name: "HBAudioKit",
     platforms: [.macOS(.v11), .iOS(.v13), .tvOS(.v13)],
-    products: [.library(name: "HBAudioKit", targets: ["HBAudioKit"])],
+    products: [
+        .library(name: "HBAudioKit", targets: ["HBAudioKit"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/freezy7/libmp3lame", from: "3.100.0")
+    ],
     targets: [
         .target(
             name: "HBAudioKit",
-            path: "Classes",
-//            sources: [
-//                "HBAKNode.h", "HBAKNode.m",
-//                "HBAKMixer.h", "HBAKMixer.m",
-//            ],
-            publicHeadersPath: "AudioKit/PublicHeaders",
+            dependencies: ["libmp3lame"],
+            path: "Classes/AudioKit",
+            publicHeadersPath: "PublicHeaders",
             linkerSettings: [.linkedLibrary("z"), .linkedLibrary("c++")]
         )
     ]
