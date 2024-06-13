@@ -38,6 +38,28 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F3BD7652C1ABA0F00C238DB /* HBBufferedAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBufferedAudioUnit.h; sourceTree = "<group>"; };
+		6F3BD7662C1ABA0F00C238DB /* HBAKDSPBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKDSPBase.hpp; sourceTree = "<group>"; };
+		6F3BD7672C1ABA0F00C238DB /* HBAKBoosterDSP.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKBoosterDSP.hpp; sourceTree = "<group>"; };
+		6F3BD7682C1ABA0F00C238DB /* HBAKAudioUnitBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAudioUnitBase.h; sourceTree = "<group>"; };
+		6F3BD7692C1ABA0F00C238DB /* HBAKNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKNode.h; sourceTree = "<group>"; };
+		6F3BD76A2C1ABA0F00C238DB /* HBAudioKitFastRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioKitFastRecorder.h; sourceTree = "<group>"; };
+		6F3BD76B2C1ABA0F00C238DB /* HBAudioKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioKit.h; sourceTree = "<group>"; };
+		6F3BD76C2C1ABA0F00C238DB /* HBAKBooster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKBooster.h; sourceTree = "<group>"; };
+		6F3BD76D2C1ABA0F00C238DB /* HBAKMixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKMixer.h; sourceTree = "<group>"; };
+		6F3BD76E2C1ABA0F00C238DB /* HBAKParameterRamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKParameterRamp.hpp; sourceTree = "<group>"; };
+		6F3BD76F2C1ABA0F00C238DB /* HBAKMicrophone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKMicrophone.h; sourceTree = "<group>"; };
+		6F3BD7702C1ABA0F00C238DB /* HBAKPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKPlayer.h; sourceTree = "<group>"; };
+		6F3BD7712C1ABA0F00C238DB /* HBAKNodeOutputPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKNodeOutputPlot.h; sourceTree = "<group>"; };
+		6F3BD7722C1ABA0F00C238DB /* HBAKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKSettings.h; sourceTree = "<group>"; };
+		6F3BD7732C1ABA0F00C238DB /* HBAKAbstractPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAbstractPlayer.h; sourceTree = "<group>"; };
+		6F3BD7742C1ABA0F00C238DB /* HBAKExponentialParameterRamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKExponentialParameterRamp.hpp; sourceTree = "<group>"; };
+		6F3BD7752C1ABA0F00C238DB /* HBAKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKConnection.h; sourceTree = "<group>"; };
+		6F3BD7762C1ABA0F00C238DB /* HBAKDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKDevice.h; sourceTree = "<group>"; };
+		6F3BD7772C1ABA0F00C238DB /* HBAKBoosterAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKBoosterAudioUnit.h; sourceTree = "<group>"; };
+		6F3BD7782C1ABA0F00C238DB /* HBAKParameterRampBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKParameterRampBase.hpp; sourceTree = "<group>"; };
+		6F3BD7792C1ABA0F00C238DB /* HBAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioSession.h; sourceTree = "<group>"; };
+		6F3BD77A2C1ABA0F00C238DB /* HBAKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAudioPlayer.h; sourceTree = "<group>"; };
 		6FD07EAD2C199D5F004FFAC1 /* HBAudioKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HBAudioKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FD07EB02C199D5F004FFAC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		6FD07EB12C199D5F004FFAC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,27 +73,6 @@
 		6FD07EC12C199D60004FFAC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FD07EC22C199D60004FFAC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		6FD07F102C19A85D004FFAC1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		6FD07F332C1A8C66004FFAC1 /* HBBufferedAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBufferedAudioUnit.h; sourceTree = "<group>"; };
-		6FD07F342C1A8C66004FFAC1 /* HBAKDSPBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKDSPBase.hpp; sourceTree = "<group>"; };
-		6FD07F352C1A8C66004FFAC1 /* HBAKBoosterDSP.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKBoosterDSP.hpp; sourceTree = "<group>"; };
-		6FD07F362C1A8C66004FFAC1 /* HBAKAudioUnitBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAudioUnitBase.h; sourceTree = "<group>"; };
-		6FD07F372C1A8C66004FFAC1 /* HBAKNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKNode.h; sourceTree = "<group>"; };
-		6FD07F382C1A8C66004FFAC1 /* HBAudioKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioKit.h; sourceTree = "<group>"; };
-		6FD07F392C1A8C66004FFAC1 /* HBAKBooster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKBooster.h; sourceTree = "<group>"; };
-		6FD07F3A2C1A8C66004FFAC1 /* HBAKMixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKMixer.h; sourceTree = "<group>"; };
-		6FD07F3B2C1A8C66004FFAC1 /* HBAKParameterRamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKParameterRamp.hpp; sourceTree = "<group>"; };
-		6FD07F3C2C1A8C66004FFAC1 /* HBAKMicrophone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKMicrophone.h; sourceTree = "<group>"; };
-		6FD07F3D2C1A8C66004FFAC1 /* HBAKPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKPlayer.h; sourceTree = "<group>"; };
-		6FD07F3E2C1A8C66004FFAC1 /* HBAKNodeOutputPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKNodeOutputPlot.h; sourceTree = "<group>"; };
-		6FD07F3F2C1A8C66004FFAC1 /* HBAKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKSettings.h; sourceTree = "<group>"; };
-		6FD07F402C1A8C66004FFAC1 /* HBAKAbstractPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAbstractPlayer.h; sourceTree = "<group>"; };
-		6FD07F412C1A8C66004FFAC1 /* HBAKExponentialParameterRamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKExponentialParameterRamp.hpp; sourceTree = "<group>"; };
-		6FD07F422C1A8C66004FFAC1 /* HBAKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKConnection.h; sourceTree = "<group>"; };
-		6FD07F432C1A8C66004FFAC1 /* HBAKDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKDevice.h; sourceTree = "<group>"; };
-		6FD07F442C1A8C66004FFAC1 /* HBAKBoosterAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKBoosterAudioUnit.h; sourceTree = "<group>"; };
-		6FD07F452C1A8C66004FFAC1 /* HBAKParameterRampBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKParameterRampBase.hpp; sourceTree = "<group>"; };
-		6FD07F462C1A8C66004FFAC1 /* HBAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioSession.h; sourceTree = "<group>"; };
-		6FD07F472C1A8C66004FFAC1 /* HBAKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAudioPlayer.h; sourceTree = "<group>"; };
 		6FD07F5B2C1A8D83004FFAC1 /* HBAKNodeOutputPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKNodeOutputPlot.m; sourceTree = "<group>"; };
 		6FD07F5C2C1A8D83004FFAC1 /* HBAKPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKPlayer.m; sourceTree = "<group>"; };
 		6FD07F5D2C1A8D83004FFAC1 /* HBAKMicrophone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKMicrophone.m; sourceTree = "<group>"; };
@@ -91,7 +92,6 @@
 		6FD07F6B2C1A8D83004FFAC1 /* HBAKBooster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKBooster.m; sourceTree = "<group>"; };
 		6FD07F6C2C1A8D83004FFAC1 /* HBAudioKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAudioKit.m; sourceTree = "<group>"; };
 		6FD07FB32C1A9F93004FFAC1 /* HBAudioKitFastRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAudioKitFastRecorder.m; sourceTree = "<group>"; };
-		6FD07FB52C1A9FA3004FFAC1 /* HBAudioKitFastRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioKitFastRecorder.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +107,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6F3BD7642C1ABA0F00C238DB /* include */ = {
+			isa = PBXGroup;
+			children = (
+				6F3BD7652C1ABA0F00C238DB /* HBBufferedAudioUnit.h */,
+				6F3BD7662C1ABA0F00C238DB /* HBAKDSPBase.hpp */,
+				6F3BD7672C1ABA0F00C238DB /* HBAKBoosterDSP.hpp */,
+				6F3BD7682C1ABA0F00C238DB /* HBAKAudioUnitBase.h */,
+				6F3BD7692C1ABA0F00C238DB /* HBAKNode.h */,
+				6F3BD76A2C1ABA0F00C238DB /* HBAudioKitFastRecorder.h */,
+				6F3BD76B2C1ABA0F00C238DB /* HBAudioKit.h */,
+				6F3BD76C2C1ABA0F00C238DB /* HBAKBooster.h */,
+				6F3BD76D2C1ABA0F00C238DB /* HBAKMixer.h */,
+				6F3BD76E2C1ABA0F00C238DB /* HBAKParameterRamp.hpp */,
+				6F3BD76F2C1ABA0F00C238DB /* HBAKMicrophone.h */,
+				6F3BD7702C1ABA0F00C238DB /* HBAKPlayer.h */,
+				6F3BD7712C1ABA0F00C238DB /* HBAKNodeOutputPlot.h */,
+				6F3BD7722C1ABA0F00C238DB /* HBAKSettings.h */,
+				6F3BD7732C1ABA0F00C238DB /* HBAKAbstractPlayer.h */,
+				6F3BD7742C1ABA0F00C238DB /* HBAKExponentialParameterRamp.hpp */,
+				6F3BD7752C1ABA0F00C238DB /* HBAKConnection.h */,
+				6F3BD7762C1ABA0F00C238DB /* HBAKDevice.h */,
+				6F3BD7772C1ABA0F00C238DB /* HBAKBoosterAudioUnit.h */,
+				6F3BD7782C1ABA0F00C238DB /* HBAKParameterRampBase.hpp */,
+				6F3BD7792C1ABA0F00C238DB /* HBAudioSession.h */,
+				6F3BD77A2C1ABA0F00C238DB /* HBAKAudioPlayer.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		6FD07EA42C199D5F004FFAC1 = {
 			isa = PBXGroup;
 			children = (
@@ -162,39 +191,10 @@
 		6FD07F152C1A8C66004FFAC1 /* AudioKit */ = {
 			isa = PBXGroup;
 			children = (
+				6F3BD7642C1ABA0F00C238DB /* include */,
 				6FD07F5A2C1A8D83004FFAC1 /* Sources */,
-				6FD07F322C1A8C66004FFAC1 /* PublicHeaders */,
 			);
 			path = AudioKit;
-			sourceTree = "<group>";
-		};
-		6FD07F322C1A8C66004FFAC1 /* PublicHeaders */ = {
-			isa = PBXGroup;
-			children = (
-				6FD07FB52C1A9FA3004FFAC1 /* HBAudioKitFastRecorder.h */,
-				6FD07F332C1A8C66004FFAC1 /* HBBufferedAudioUnit.h */,
-				6FD07F342C1A8C66004FFAC1 /* HBAKDSPBase.hpp */,
-				6FD07F352C1A8C66004FFAC1 /* HBAKBoosterDSP.hpp */,
-				6FD07F362C1A8C66004FFAC1 /* HBAKAudioUnitBase.h */,
-				6FD07F372C1A8C66004FFAC1 /* HBAKNode.h */,
-				6FD07F382C1A8C66004FFAC1 /* HBAudioKit.h */,
-				6FD07F392C1A8C66004FFAC1 /* HBAKBooster.h */,
-				6FD07F3A2C1A8C66004FFAC1 /* HBAKMixer.h */,
-				6FD07F3B2C1A8C66004FFAC1 /* HBAKParameterRamp.hpp */,
-				6FD07F3C2C1A8C66004FFAC1 /* HBAKMicrophone.h */,
-				6FD07F3D2C1A8C66004FFAC1 /* HBAKPlayer.h */,
-				6FD07F3E2C1A8C66004FFAC1 /* HBAKNodeOutputPlot.h */,
-				6FD07F3F2C1A8C66004FFAC1 /* HBAKSettings.h */,
-				6FD07F402C1A8C66004FFAC1 /* HBAKAbstractPlayer.h */,
-				6FD07F412C1A8C66004FFAC1 /* HBAKExponentialParameterRamp.hpp */,
-				6FD07F422C1A8C66004FFAC1 /* HBAKConnection.h */,
-				6FD07F432C1A8C66004FFAC1 /* HBAKDevice.h */,
-				6FD07F442C1A8C66004FFAC1 /* HBAKBoosterAudioUnit.h */,
-				6FD07F452C1A8C66004FFAC1 /* HBAKParameterRampBase.hpp */,
-				6FD07F462C1A8C66004FFAC1 /* HBAudioSession.h */,
-				6FD07F472C1A8C66004FFAC1 /* HBAKAudioPlayer.h */,
-			);
-			path = PublicHeaders;
 			sourceTree = "<group>";
 		};
 		6FD07F5A2C1A8D83004FFAC1 /* Sources */ = {

@@ -16,7 +16,6 @@ let package = Package (
             name: "HBAudioKit",
             dependencies: ["libmp3lame"],
             path: "Classes/AudioKit",
-            publicHeadersPath: "PublicHeaders",
             linkerSettings: [
                 .linkedLibrary("z"),
                 .linkedLibrary("c++"),
