@@ -10,6 +10,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "HBAKDevice.h"
 #import "HBAKMixer.h"
+#import "HBAudioKitFastRecorder.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
