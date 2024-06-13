@@ -17,7 +17,16 @@ let package = Package (
             dependencies: ["libmp3lame"],
             path: "Classes/AudioKit",
             publicHeadersPath: "PublicHeaders",
-            linkerSettings: [.linkedLibrary("z"), .linkedLibrary("c++")]
+            linkerSettings: [
+                .linkedLibrary("z"),
+                .linkedLibrary("c++"),
+                .linkedFramework("UIKit"),
+                .linkedFramework("Foundation"),
+                .linkedFramework("AVFoundation"),
+                .linkedFramework("AudioToolbox"),
+                .linkedFramework("algorithm"),
+                .linkedFramework("Accelerate"),
+            ]
         )
     ]
 )
