@@ -1,0 +1,530 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6FD07EB22C199D5F004FFAC1 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07EB12C199D5F004FFAC1 /* AppDelegate.m */; };
+		6FD07EB52C199D5F004FFAC1 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07EB42C199D5F004FFAC1 /* SceneDelegate.m */; };
+		6FD07EB82C199D5F004FFAC1 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07EB72C199D5F004FFAC1 /* ViewController.m */; };
+		6FD07EBB2C199D5F004FFAC1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FD07EB92C199D5F004FFAC1 /* Main.storyboard */; };
+		6FD07EBD2C199D60004FFAC1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FD07EBC2C199D60004FFAC1 /* Assets.xcassets */; };
+		6FD07EC02C199D60004FFAC1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FD07EBE2C199D60004FFAC1 /* LaunchScreen.storyboard */; };
+		6FD07EC32C199D60004FFAC1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07EC22C199D60004FFAC1 /* main.m */; };
+		6FD07F112C19A85D004FFAC1 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FD07F102C19A85D004FFAC1 /* libc++.tbd */; };
+		6FD07F6D2C1A8D83004FFAC1 /* HBAKNodeOutputPlot.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F5B2C1A8D83004FFAC1 /* HBAKNodeOutputPlot.m */; };
+		6FD07F6E2C1A8D83004FFAC1 /* HBAKPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F5C2C1A8D83004FFAC1 /* HBAKPlayer.m */; };
+		6FD07F6F2C1A8D83004FFAC1 /* HBAKMicrophone.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F5D2C1A8D83004FFAC1 /* HBAKMicrophone.m */; };
+		6FD07F702C1A8D83004FFAC1 /* HBAKMixer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F5E2C1A8D83004FFAC1 /* HBAKMixer.m */; };
+		6FD07F712C1A8D83004FFAC1 /* HBAKAbstractPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F5F2C1A8D83004FFAC1 /* HBAKAbstractPlayer.m */; };
+		6FD07F722C1A8D83004FFAC1 /* HBAKSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F602C1A8D83004FFAC1 /* HBAKSettings.m */; };
+		6FD07F732C1A8D83004FFAC1 /* HBAKBoosterAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F612C1A8D83004FFAC1 /* HBAKBoosterAudioUnit.m */; };
+		6FD07F742C1A8D83004FFAC1 /* HBAKDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F622C1A8D83004FFAC1 /* HBAKDevice.m */; };
+		6FD07F752C1A8D83004FFAC1 /* HBAKConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F632C1A8D83004FFAC1 /* HBAKConnection.m */; };
+		6FD07F762C1A8D83004FFAC1 /* HBAKBoosterDSP.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F642C1A8D83004FFAC1 /* HBAKBoosterDSP.mm */; };
+		6FD07F772C1A8D83004FFAC1 /* HBAKAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F652C1A8D83004FFAC1 /* HBAKAudioPlayer.m */; };
+		6FD07F782C1A8D83004FFAC1 /* HBAudioSession.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F662C1A8D83004FFAC1 /* HBAudioSession.m */; };
+		6FD07F792C1A8D83004FFAC1 /* HBBufferedAudioUnit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F672C1A8D83004FFAC1 /* HBBufferedAudioUnit.m */; };
+		6FD07F7A2C1A8D83004FFAC1 /* HBAKAudioUnitBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F682C1A8D83004FFAC1 /* HBAKAudioUnitBase.mm */; };
+		6FD07F7B2C1A8D83004FFAC1 /* HBAKNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F692C1A8D83004FFAC1 /* HBAKNode.m */; };
+		6FD07F7C2C1A8D83004FFAC1 /* HBAKDSPBase.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F6A2C1A8D83004FFAC1 /* HBAKDSPBase.mm */; };
+		6FD07F7D2C1A8D83004FFAC1 /* HBAKBooster.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F6B2C1A8D83004FFAC1 /* HBAKBooster.m */; };
+		6FD07F7E2C1A8D83004FFAC1 /* HBAudioKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F6C2C1A8D83004FFAC1 /* HBAudioKit.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6FD07EAD2C199D5F004FFAC1 /* HBAudioKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HBAudioKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FD07EB02C199D5F004FFAC1 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		6FD07EB12C199D5F004FFAC1 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		6FD07EB32C199D5F004FFAC1 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		6FD07EB42C199D5F004FFAC1 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		6FD07EB62C199D5F004FFAC1 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		6FD07EB72C199D5F004FFAC1 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		6FD07EBA2C199D5F004FFAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6FD07EBC2C199D60004FFAC1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FD07EBF2C199D60004FFAC1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FD07EC12C199D60004FFAC1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FD07EC22C199D60004FFAC1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		6FD07F102C19A85D004FFAC1 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		6FD07F332C1A8C66004FFAC1 /* HBBufferedAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBBufferedAudioUnit.h; sourceTree = "<group>"; };
+		6FD07F342C1A8C66004FFAC1 /* HBAKDSPBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKDSPBase.hpp; sourceTree = "<group>"; };
+		6FD07F352C1A8C66004FFAC1 /* HBAKBoosterDSP.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKBoosterDSP.hpp; sourceTree = "<group>"; };
+		6FD07F362C1A8C66004FFAC1 /* HBAKAudioUnitBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAudioUnitBase.h; sourceTree = "<group>"; };
+		6FD07F372C1A8C66004FFAC1 /* HBAKNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKNode.h; sourceTree = "<group>"; };
+		6FD07F382C1A8C66004FFAC1 /* HBAudioKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioKit.h; sourceTree = "<group>"; };
+		6FD07F392C1A8C66004FFAC1 /* HBAKBooster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKBooster.h; sourceTree = "<group>"; };
+		6FD07F3A2C1A8C66004FFAC1 /* HBAKMixer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKMixer.h; sourceTree = "<group>"; };
+		6FD07F3B2C1A8C66004FFAC1 /* HBAKParameterRamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKParameterRamp.hpp; sourceTree = "<group>"; };
+		6FD07F3C2C1A8C66004FFAC1 /* HBAKMicrophone.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKMicrophone.h; sourceTree = "<group>"; };
+		6FD07F3D2C1A8C66004FFAC1 /* HBAKPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKPlayer.h; sourceTree = "<group>"; };
+		6FD07F3E2C1A8C66004FFAC1 /* HBAKNodeOutputPlot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKNodeOutputPlot.h; sourceTree = "<group>"; };
+		6FD07F3F2C1A8C66004FFAC1 /* HBAKSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKSettings.h; sourceTree = "<group>"; };
+		6FD07F402C1A8C66004FFAC1 /* HBAKAbstractPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAbstractPlayer.h; sourceTree = "<group>"; };
+		6FD07F412C1A8C66004FFAC1 /* HBAKExponentialParameterRamp.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKExponentialParameterRamp.hpp; sourceTree = "<group>"; };
+		6FD07F422C1A8C66004FFAC1 /* HBAKConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKConnection.h; sourceTree = "<group>"; };
+		6FD07F432C1A8C66004FFAC1 /* HBAKDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKDevice.h; sourceTree = "<group>"; };
+		6FD07F442C1A8C66004FFAC1 /* HBAKBoosterAudioUnit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKBoosterAudioUnit.h; sourceTree = "<group>"; };
+		6FD07F452C1A8C66004FFAC1 /* HBAKParameterRampBase.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = HBAKParameterRampBase.hpp; sourceTree = "<group>"; };
+		6FD07F462C1A8C66004FFAC1 /* HBAudioSession.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAudioSession.h; sourceTree = "<group>"; };
+		6FD07F472C1A8C66004FFAC1 /* HBAKAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBAKAudioPlayer.h; sourceTree = "<group>"; };
+		6FD07F5B2C1A8D83004FFAC1 /* HBAKNodeOutputPlot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKNodeOutputPlot.m; sourceTree = "<group>"; };
+		6FD07F5C2C1A8D83004FFAC1 /* HBAKPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKPlayer.m; sourceTree = "<group>"; };
+		6FD07F5D2C1A8D83004FFAC1 /* HBAKMicrophone.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKMicrophone.m; sourceTree = "<group>"; };
+		6FD07F5E2C1A8D83004FFAC1 /* HBAKMixer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKMixer.m; sourceTree = "<group>"; };
+		6FD07F5F2C1A8D83004FFAC1 /* HBAKAbstractPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKAbstractPlayer.m; sourceTree = "<group>"; };
+		6FD07F602C1A8D83004FFAC1 /* HBAKSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKSettings.m; sourceTree = "<group>"; };
+		6FD07F612C1A8D83004FFAC1 /* HBAKBoosterAudioUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKBoosterAudioUnit.m; sourceTree = "<group>"; };
+		6FD07F622C1A8D83004FFAC1 /* HBAKDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKDevice.m; sourceTree = "<group>"; };
+		6FD07F632C1A8D83004FFAC1 /* HBAKConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKConnection.m; sourceTree = "<group>"; };
+		6FD07F642C1A8D83004FFAC1 /* HBAKBoosterDSP.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBAKBoosterDSP.mm; sourceTree = "<group>"; };
+		6FD07F652C1A8D83004FFAC1 /* HBAKAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKAudioPlayer.m; sourceTree = "<group>"; };
+		6FD07F662C1A8D83004FFAC1 /* HBAudioSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAudioSession.m; sourceTree = "<group>"; };
+		6FD07F672C1A8D83004FFAC1 /* HBBufferedAudioUnit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBBufferedAudioUnit.m; sourceTree = "<group>"; };
+		6FD07F682C1A8D83004FFAC1 /* HBAKAudioUnitBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBAKAudioUnitBase.mm; sourceTree = "<group>"; };
+		6FD07F692C1A8D83004FFAC1 /* HBAKNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKNode.m; sourceTree = "<group>"; };
+		6FD07F6A2C1A8D83004FFAC1 /* HBAKDSPBase.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = HBAKDSPBase.mm; sourceTree = "<group>"; };
+		6FD07F6B2C1A8D83004FFAC1 /* HBAKBooster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKBooster.m; sourceTree = "<group>"; };
+		6FD07F6C2C1A8D83004FFAC1 /* HBAudioKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAudioKit.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FD07EAA2C199D5F004FFAC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD07F112C19A85D004FFAC1 /* libc++.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FD07EA42C199D5F004FFAC1 = {
+			isa = PBXGroup;
+			children = (
+				6FD07EAF2C199D5F004FFAC1 /* HBAudioKit */,
+				6FD07EAE2C199D5F004FFAC1 /* Products */,
+				6FD07F0F2C19A85D004FFAC1 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6FD07EAE2C199D5F004FFAC1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FD07EAD2C199D5F004FFAC1 /* HBAudioKit.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FD07EAF2C199D5F004FFAC1 /* HBAudioKit */ = {
+			isa = PBXGroup;
+			children = (
+				6FD07EB02C199D5F004FFAC1 /* AppDelegate.h */,
+				6FD07EB12C199D5F004FFAC1 /* AppDelegate.m */,
+				6FD07EB32C199D5F004FFAC1 /* SceneDelegate.h */,
+				6FD07EB42C199D5F004FFAC1 /* SceneDelegate.m */,
+				6FD07EB62C199D5F004FFAC1 /* ViewController.h */,
+				6FD07EB72C199D5F004FFAC1 /* ViewController.m */,
+				6FD07EB92C199D5F004FFAC1 /* Main.storyboard */,
+				6FD07EBC2C199D60004FFAC1 /* Assets.xcassets */,
+				6FD07EBE2C199D60004FFAC1 /* LaunchScreen.storyboard */,
+				6FD07EC12C199D60004FFAC1 /* Info.plist */,
+				6FD07EC22C199D60004FFAC1 /* main.m */,
+				6FD07F142C1A8C66004FFAC1 /* Classes */,
+			);
+			path = HBAudioKit;
+			sourceTree = "<group>";
+		};
+		6FD07F0F2C19A85D004FFAC1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6FD07F102C19A85D004FFAC1 /* libc++.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6FD07F142C1A8C66004FFAC1 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6FD07F152C1A8C66004FFAC1 /* AudioKit */,
+			);
+			path = Classes;
+			sourceTree = SOURCE_ROOT;
+		};
+		6FD07F152C1A8C66004FFAC1 /* AudioKit */ = {
+			isa = PBXGroup;
+			children = (
+				6FD07F5A2C1A8D83004FFAC1 /* Sources */,
+				6FD07F322C1A8C66004FFAC1 /* PublicHeaders */,
+			);
+			path = AudioKit;
+			sourceTree = "<group>";
+		};
+		6FD07F322C1A8C66004FFAC1 /* PublicHeaders */ = {
+			isa = PBXGroup;
+			children = (
+				6FD07F332C1A8C66004FFAC1 /* HBBufferedAudioUnit.h */,
+				6FD07F342C1A8C66004FFAC1 /* HBAKDSPBase.hpp */,
+				6FD07F352C1A8C66004FFAC1 /* HBAKBoosterDSP.hpp */,
+				6FD07F362C1A8C66004FFAC1 /* HBAKAudioUnitBase.h */,
+				6FD07F372C1A8C66004FFAC1 /* HBAKNode.h */,
+				6FD07F382C1A8C66004FFAC1 /* HBAudioKit.h */,
+				6FD07F392C1A8C66004FFAC1 /* HBAKBooster.h */,
+				6FD07F3A2C1A8C66004FFAC1 /* HBAKMixer.h */,
+				6FD07F3B2C1A8C66004FFAC1 /* HBAKParameterRamp.hpp */,
+				6FD07F3C2C1A8C66004FFAC1 /* HBAKMicrophone.h */,
+				6FD07F3D2C1A8C66004FFAC1 /* HBAKPlayer.h */,
+				6FD07F3E2C1A8C66004FFAC1 /* HBAKNodeOutputPlot.h */,
+				6FD07F3F2C1A8C66004FFAC1 /* HBAKSettings.h */,
+				6FD07F402C1A8C66004FFAC1 /* HBAKAbstractPlayer.h */,
+				6FD07F412C1A8C66004FFAC1 /* HBAKExponentialParameterRamp.hpp */,
+				6FD07F422C1A8C66004FFAC1 /* HBAKConnection.h */,
+				6FD07F432C1A8C66004FFAC1 /* HBAKDevice.h */,
+				6FD07F442C1A8C66004FFAC1 /* HBAKBoosterAudioUnit.h */,
+				6FD07F452C1A8C66004FFAC1 /* HBAKParameterRampBase.hpp */,
+				6FD07F462C1A8C66004FFAC1 /* HBAudioSession.h */,
+				6FD07F472C1A8C66004FFAC1 /* HBAKAudioPlayer.h */,
+			);
+			path = PublicHeaders;
+			sourceTree = "<group>";
+		};
+		6FD07F5A2C1A8D83004FFAC1 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				6FD07F5B2C1A8D83004FFAC1 /* HBAKNodeOutputPlot.m */,
+				6FD07F5C2C1A8D83004FFAC1 /* HBAKPlayer.m */,
+				6FD07F5D2C1A8D83004FFAC1 /* HBAKMicrophone.m */,
+				6FD07F5E2C1A8D83004FFAC1 /* HBAKMixer.m */,
+				6FD07F5F2C1A8D83004FFAC1 /* HBAKAbstractPlayer.m */,
+				6FD07F602C1A8D83004FFAC1 /* HBAKSettings.m */,
+				6FD07F612C1A8D83004FFAC1 /* HBAKBoosterAudioUnit.m */,
+				6FD07F622C1A8D83004FFAC1 /* HBAKDevice.m */,
+				6FD07F632C1A8D83004FFAC1 /* HBAKConnection.m */,
+				6FD07F642C1A8D83004FFAC1 /* HBAKBoosterDSP.mm */,
+				6FD07F652C1A8D83004FFAC1 /* HBAKAudioPlayer.m */,
+				6FD07F662C1A8D83004FFAC1 /* HBAudioSession.m */,
+				6FD07F672C1A8D83004FFAC1 /* HBBufferedAudioUnit.m */,
+				6FD07F682C1A8D83004FFAC1 /* HBAKAudioUnitBase.mm */,
+				6FD07F692C1A8D83004FFAC1 /* HBAKNode.m */,
+				6FD07F6A2C1A8D83004FFAC1 /* HBAKDSPBase.mm */,
+				6FD07F6B2C1A8D83004FFAC1 /* HBAKBooster.m */,
+				6FD07F6C2C1A8D83004FFAC1 /* HBAudioKit.m */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FD07EAC2C199D5F004FFAC1 /* HBAudioKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FD07EC62C199D60004FFAC1 /* Build configuration list for PBXNativeTarget "HBAudioKit" */;
+			buildPhases = (
+				6FD07EA92C199D5F004FFAC1 /* Sources */,
+				6FD07EAA2C199D5F004FFAC1 /* Frameworks */,
+				6FD07EAB2C199D5F004FFAC1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = HBAudioKit;
+			productName = HBAudioKit;
+			productReference = 6FD07EAD2C199D5F004FFAC1 /* HBAudioKit.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FD07EA52C199D5F004FFAC1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1520;
+				TargetAttributes = {
+					6FD07EAC2C199D5F004FFAC1 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+				};
+			};
+			buildConfigurationList = 6FD07EA82C199D5F004FFAC1 /* Build configuration list for PBXProject "HBAudioKit" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FD07EA42C199D5F004FFAC1;
+			productRefGroup = 6FD07EAE2C199D5F004FFAC1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FD07EAC2C199D5F004FFAC1 /* HBAudioKit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FD07EAB2C199D5F004FFAC1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD07EC02C199D60004FFAC1 /* LaunchScreen.storyboard in Resources */,
+				6FD07EBD2C199D60004FFAC1 /* Assets.xcassets in Resources */,
+				6FD07EBB2C199D5F004FFAC1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FD07EA92C199D5F004FFAC1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FD07F752C1A8D83004FFAC1 /* HBAKConnection.m in Sources */,
+				6FD07F772C1A8D83004FFAC1 /* HBAKAudioPlayer.m in Sources */,
+				6FD07F722C1A8D83004FFAC1 /* HBAKSettings.m in Sources */,
+				6FD07F6F2C1A8D83004FFAC1 /* HBAKMicrophone.m in Sources */,
+				6FD07F702C1A8D83004FFAC1 /* HBAKMixer.m in Sources */,
+				6FD07F762C1A8D83004FFAC1 /* HBAKBoosterDSP.mm in Sources */,
+				6FD07F7C2C1A8D83004FFAC1 /* HBAKDSPBase.mm in Sources */,
+				6FD07F6E2C1A8D83004FFAC1 /* HBAKPlayer.m in Sources */,
+				6FD07EB82C199D5F004FFAC1 /* ViewController.m in Sources */,
+				6FD07F742C1A8D83004FFAC1 /* HBAKDevice.m in Sources */,
+				6FD07F7A2C1A8D83004FFAC1 /* HBAKAudioUnitBase.mm in Sources */,
+				6FD07F712C1A8D83004FFAC1 /* HBAKAbstractPlayer.m in Sources */,
+				6FD07F732C1A8D83004FFAC1 /* HBAKBoosterAudioUnit.m in Sources */,
+				6FD07F782C1A8D83004FFAC1 /* HBAudioSession.m in Sources */,
+				6FD07F792C1A8D83004FFAC1 /* HBBufferedAudioUnit.m in Sources */,
+				6FD07EB22C199D5F004FFAC1 /* AppDelegate.m in Sources */,
+				6FD07F7B2C1A8D83004FFAC1 /* HBAKNode.m in Sources */,
+				6FD07F7E2C1A8D83004FFAC1 /* HBAudioKit.m in Sources */,
+				6FD07EC32C199D60004FFAC1 /* main.m in Sources */,
+				6FD07F6D2C1A8D83004FFAC1 /* HBAKNodeOutputPlot.m in Sources */,
+				6FD07F7D2C1A8D83004FFAC1 /* HBAKBooster.m in Sources */,
+				6FD07EB52C199D5F004FFAC1 /* SceneDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6FD07EB92C199D5F004FFAC1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FD07EBA2C199D5F004FFAC1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6FD07EBE2C199D60004FFAC1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FD07EBF2C199D60004FFAC1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FD07EC42C199D60004FFAC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		6FD07EC52C199D60004FFAC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FD07EC72C199D60004FFAC1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74FFGT6HP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HBAudioKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.holiday.HBAudioKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FD07EC82C199D60004FFAC1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 74FFGT6HP4;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = HBAudioKit/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.holiday.HBAudioKit;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FD07EA82C199D5F004FFAC1 /* Build configuration list for PBXProject "HBAudioKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FD07EC42C199D60004FFAC1 /* Debug */,
+				6FD07EC52C199D60004FFAC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FD07EC62C199D60004FFAC1 /* Build configuration list for PBXNativeTarget "HBAudioKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FD07EC72C199D60004FFAC1 /* Debug */,
+				6FD07EC82C199D60004FFAC1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6FD07EA52C199D5F004FFAC1 /* Project object */;
+}
