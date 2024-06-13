@@ -11,6 +11,19 @@
 #import "HBAKDevice.h"
 #import "HBAKMixer.h"
 #import "HBAudioKitFastRecorder.h"
+#import "HBAKAudioPlayer.h"
+#import "HBAKAudioUnitBase.h"
+#import "HBAKBooster.h"
+#import "HBAKBoosterAudioUnit.h"
+#import "HBAKBoosterDSP.hpp"
+#import "HBAKDSPBase.hpp"
+#import "HBAKExponentialParameterRamp.hpp"
+#import "HBAKNodeOutputPlot.h"
+#import "HBAKParameterRamp.hpp"
+#import "HBAKParameterRampBase.hpp"
+#import "HBAudioSession.h"
+#import "HBBufferedAudioUnit.h"
+
 
 NS_ASSUME_NONNULL_BEGIN
 
