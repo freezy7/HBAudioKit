@@ -241,7 +241,7 @@ static HBAKNode *_innerOutput = nil;
 }
 
 + (void)stopAndReturnError:(NSError *__autoreleasing  _Nullable *)error {
-    [[self engine] startAndReturnError:error];
+    [[self engine] stop];
     [self setShouldBeRunning:NO];
     
     [[NSNotificationCenter defaultCenter] removeObserver:self name:AVAudioSessionRouteChangeNotification object:nil];
