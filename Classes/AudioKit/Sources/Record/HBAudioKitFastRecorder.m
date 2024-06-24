@@ -484,14 +484,14 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
             if (audioFormat.commonFormat == AVAudioPCMFormatFloat32) {
                 // 4 字节 32bit
                 if (audioFormat.interleaved) {
-                    float pcm_buffer[PCM_SIZE]; // 交错的左右声道数据
+                    float pcm_buffer[PCM_SIZE * 2]; // 交错的左右声道数据
                     unsigned char mp3_buffer[PCM_SIZE];
                     
                     size_t read;
                     int write;
                     
                     do {
-                        read = fread(pcm_buffer, sizeof(float), PCM_SIZE, pcm);
+                        read = fread(pcm_buffer, 2 * sizeof(float), PCM_SIZE, pcm);
                         if (read == 0) {
                             write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
