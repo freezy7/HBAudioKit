@@ -34,6 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 将录制的音频文件转换为MP3格式
 + (void)exchangePCMToMP3WithFilePath:(NSString *)filePath resultPath:(NSString *)resultPath completion:(void(^)(BOOL success))completion;
++ (void)exchangePCMToMP3WithFilePath:(NSString *)filePath audioFormat:(AVAudioFormat *)audioFormat resultPath:(NSString *)resultPath completion:(void(^)(BOOL success))completion;
 
 @end
 

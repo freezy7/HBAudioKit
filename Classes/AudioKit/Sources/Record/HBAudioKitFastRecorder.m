@@ -437,4 +437,221 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
   });
 }
 
++ (void)exchangePCMToMP3WithFilePath:(NSString *)filePath audioFormat:(AVAudioFormat *)audioFormat resultPath:(NSString *)resultPath completion:(void(^)(BOOL success))completion {
+    
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        if (completion) {
+            completion(NO);
+        }
+        return;
+    }
+    
+    if ([[NSFileManager defaultManager] fileExistsAtPath:resultPath]) {
+        NSError *error = nil;
+        [[NSFileManager defaultManager] removeItemAtPath:resultPath error:&error];
+    }
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        
+        BOOL success = YES;
+        @try {
+            FILE *pcm = fopen([filePath cStringUsingEncoding:1], "rb");//被转换的音频文件位置
+            //跳过 PCM header 否者会有一些噪音在MP3开始播放处
+            fseek(pcm, 4*1024, SEEK_CUR);
+            FILE *mp3 = fopen([resultPath cStringUsingEncoding:1], "wb");//生成的Mp3文件位置
+            
+            // 初始化lame编码器
+            lame_t lame = lame_init();
+            // 设置lame mp3编码的采样率 / 声道数 / 比特率
+            double sampleRate = audioFormat.sampleRate;
+            int channelCount = audioFormat.channelCount;
+            
+            lame_set_in_samplerate(lame, sampleRate);
+            lame_set_num_channels(lame, channelCount);
+            lame_set_out_samplerate(lame, 16000);
+            lame_set_quality(lame, 7); // MP3音频质量.0~9.其中0是最好,非常慢,9是最差.
+            lame_set_brate(lame, 32); // 设置为32和安卓保持统一 32是32000 bit_rate = 32kbps
+            // lame_set_VBR(lame, vbr_default); // 设置mp3的编码方式,不采用VBR的模式，会在服务端显示MP3的时长显示不正确
+            
+            lame_init_params(lame);
+            
+            // 1 字节(也就是8bit) 256, 也就是只能将振幅划分成 256 个等级;
+            // 2 字节(也就是16bit) 65536个等级 , CD级别，16bit pcm就是最常见的。
+            // 4 字节(也就是32bit) 能把振幅细分到 4294967296 个等级, 一般不常用。
+            
+            int PCM_SIZE = 8192;
+            int MP3_SIZE = 8192;
+            
+            if (audioFormat.commonFormat == AVAudioPCMFormatFloat32) {
+                // 4 字节 32bit
+                if (audioFormat.interleaved) {
+                    float pcm_buffer[PCM_SIZE * 2]; // 交错的左右声道数据
+                    unsigned char mp3_buffer[PCM_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_buffer, 2 * sizeof(float), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer_interleaved_ieee_float(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                } else {
+                    float pcm_l_buffer[PCM_SIZE];
+                    float pcm_r_buffer[PCM_SIZE];
+                    unsigned char mp3_buffer[MP3_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_l_buffer, sizeof(float), PCM_SIZE, pcm);
+                        fread(pcm_r_buffer, sizeof(float), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer_ieee_float(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                }
+            } else if (audioFormat.commonFormat == AVAudioPCMFormatFloat64) {
+                if (audioFormat.interleaved) {
+                    double pcm_buffer[PCM_SIZE * 2]; // 交错的左右声道数据
+                    unsigned char mp3_buffer[PCM_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_buffer, 2 * sizeof(double), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer_interleaved_ieee_double(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                } else {
+                    double pcm_l_buffer[PCM_SIZE];
+                    double pcm_r_buffer[PCM_SIZE];
+                    unsigned char mp3_buffer[MP3_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_l_buffer, sizeof(double), PCM_SIZE, pcm);
+                        fread(pcm_r_buffer, sizeof(double), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer_ieee_double(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                }
+            } else if (audioFormat.commonFormat == AVAudioPCMFormatInt32) {
+                // 4 字节 32bit
+                if (audioFormat.interleaved) {
+                    int pcm_buffer[PCM_SIZE * 2]; // 交错的左右声道数据
+                    unsigned char mp3_buffer[PCM_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_buffer, 2 * sizeof(int), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer_interleaved_int(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                } else {
+                    int pcm_l_buffer[PCM_SIZE];
+                    int pcm_r_buffer[PCM_SIZE];
+                    unsigned char mp3_buffer[MP3_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_l_buffer, sizeof(int), PCM_SIZE, pcm);
+                        fread(pcm_r_buffer, sizeof(int), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer_int(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                }
+            } else {
+                // 2 字节 16bit and audioFormat.commonFormat == AVAudioPCMFormatInt16
+                if (audioFormat.interleaved) {
+                    short int pcm_buffer[PCM_SIZE * 2]; // 交错的左右声道数据
+                    unsigned char mp3_buffer[PCM_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_buffer, 2 * sizeof(short int), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer_interleaved(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                } else {
+                    short int pcm_l_buffer[PCM_SIZE];
+                    short int pcm_r_buffer[PCM_SIZE];
+                    unsigned char mp3_buffer[MP3_SIZE];
+                    
+                    size_t read;
+                    int write;
+                    
+                    do {
+                        read = fread(pcm_l_buffer, sizeof(short int), PCM_SIZE, pcm);
+                        fread(pcm_r_buffer, sizeof(short int), PCM_SIZE, pcm);
+                        if (read == 0) {
+                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                        } else {
+                            write = lame_encode_buffer(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                        }
+                        fwrite(mp3_buffer, write, 1, mp3);
+                    } while (read != 0);
+                }
+            }
+            
+            //写入Mp3 VBR Tag，不是必须的步骤
+            lame_mp3_tags_fid(lame, mp3);
+            
+            lame_close(lame);
+            fclose(mp3);
+            fclose(pcm);
+        }
+        @catch (NSException *exception) {
+            NSLog(@"lame exchange error %@",[exception description]);
+            success = NO;
+        }
+        @finally {
+            // 转码完成
+        }
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            if (completion) {
+                completion(success);
+            }
+        });
+    });
+}
+
 @end
