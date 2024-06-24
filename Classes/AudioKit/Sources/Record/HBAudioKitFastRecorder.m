@@ -457,7 +457,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
         @try {
             FILE *pcm = fopen([filePath cStringUsingEncoding:1], "rb");//被转换的音频文件位置
             //跳过 PCM header 否者会有一些噪音在MP3开始播放处
-            fseek(pcm, 4*1024, SEEK_CUR);
+            // fseek(pcm, 4*1024, SEEK_CUR);
             FILE *mp3 = fopen([resultPath cStringUsingEncoding:1], "wb");//生成的Mp3文件位置
             
             // 初始化lame编码器
@@ -480,21 +480,20 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
             // 4 字节(也就是32bit) 能把振幅细分到 4294967296 个等级, 一般不常用。
             
             int PCM_SIZE = 8192;
-            int MP3_SIZE = 8192;
             
             if (audioFormat.commonFormat == AVAudioPCMFormatFloat32) {
                 // 4 字节 32bit
                 if (audioFormat.interleaved) {
-                    float pcm_buffer[PCM_SIZE * 2]; // 交错的左右声道数据
+                    float pcm_buffer[PCM_SIZE]; // 交错的左右声道数据
                     unsigned char mp3_buffer[PCM_SIZE];
                     
                     size_t read;
                     int write;
                     
                     do {
-                        read = fread(pcm_buffer, 2 * sizeof(float), PCM_SIZE, pcm);
+                        read = fread(pcm_buffer, sizeof(float), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
                             write = lame_encode_buffer_interleaved_ieee_float(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
@@ -503,7 +502,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                 } else {
                     float pcm_l_buffer[PCM_SIZE];
                     float pcm_r_buffer[PCM_SIZE];
-                    unsigned char mp3_buffer[MP3_SIZE];
+                    unsigned char mp3_buffer[PCM_SIZE];
                     
                     size_t read;
                     int write;
@@ -512,9 +511,9 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                         read = fread(pcm_l_buffer, sizeof(float), PCM_SIZE, pcm);
                         fread(pcm_r_buffer, sizeof(float), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
-                            write = lame_encode_buffer_ieee_float(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_buffer_ieee_float(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
                         fwrite(mp3_buffer, write, 1, mp3);
                     } while (read != 0);
@@ -530,7 +529,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                     do {
                         read = fread(pcm_buffer, 2 * sizeof(double), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
                             write = lame_encode_buffer_interleaved_ieee_double(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
@@ -539,7 +538,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                 } else {
                     double pcm_l_buffer[PCM_SIZE];
                     double pcm_r_buffer[PCM_SIZE];
-                    unsigned char mp3_buffer[MP3_SIZE];
+                    unsigned char mp3_buffer[PCM_SIZE];
                     
                     size_t read;
                     int write;
@@ -548,9 +547,9 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                         read = fread(pcm_l_buffer, sizeof(double), PCM_SIZE, pcm);
                         fread(pcm_r_buffer, sizeof(double), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
-                            write = lame_encode_buffer_ieee_double(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_buffer_ieee_double(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
                         fwrite(mp3_buffer, write, 1, mp3);
                     } while (read != 0);
@@ -567,7 +566,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                     do {
                         read = fread(pcm_buffer, 2 * sizeof(int), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
                             write = lame_encode_buffer_interleaved_int(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
@@ -576,7 +575,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                 } else {
                     int pcm_l_buffer[PCM_SIZE];
                     int pcm_r_buffer[PCM_SIZE];
-                    unsigned char mp3_buffer[MP3_SIZE];
+                    unsigned char mp3_buffer[PCM_SIZE];
                     
                     size_t read;
                     int write;
@@ -585,9 +584,9 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                         read = fread(pcm_l_buffer, sizeof(int), PCM_SIZE, pcm);
                         fread(pcm_r_buffer, sizeof(int), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
-                            write = lame_encode_buffer_int(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_buffer_int(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
                         fwrite(mp3_buffer, write, 1, mp3);
                     } while (read != 0);
@@ -604,7 +603,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                     do {
                         read = fread(pcm_buffer, 2 * sizeof(short int), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
                             write = lame_encode_buffer_interleaved(lame, pcm_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
@@ -613,7 +612,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                 } else {
                     short int pcm_l_buffer[PCM_SIZE];
                     short int pcm_r_buffer[PCM_SIZE];
-                    unsigned char mp3_buffer[MP3_SIZE];
+                    unsigned char mp3_buffer[PCM_SIZE];
                     
                     size_t read;
                     int write;
@@ -622,9 +621,9 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
                         read = fread(pcm_l_buffer, sizeof(short int), PCM_SIZE, pcm);
                         fread(pcm_r_buffer, sizeof(short int), PCM_SIZE, pcm);
                         if (read == 0) {
-                            write = lame_encode_flush(lame, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_flush(lame, mp3_buffer, PCM_SIZE);
                         } else {
-                            write = lame_encode_buffer(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, MP3_SIZE);
+                            write = lame_encode_buffer(lame, pcm_l_buffer, pcm_r_buffer, (int)read, mp3_buffer, PCM_SIZE);
                         }
                         fwrite(mp3_buffer, write, 1, mp3);
                     } while (read != 0);
