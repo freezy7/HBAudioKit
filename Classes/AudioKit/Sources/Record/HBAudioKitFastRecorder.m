@@ -20,6 +20,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
 
 @interface HBAudioKitFastRecorder ()
 
+@property (nonatomic, strong) HBAKBooster *micBooster;
 @property (nonatomic, strong) HBAKMixer *micMixer;
 
 @property (nonatomic, strong) NSString *savePath;
@@ -141,12 +142,15 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
     NSMutableArray *mixArray1 = [NSMutableArray array];
     [mixArray1 addObject:_mic];
     self.micMixer = [[HBAKMixer alloc] initWithInputs:mixArray1];
+    
+    // gain 控制麦克风的音量是否输入到扬声器
+    self.micBooster = [[HBAKBooster alloc] initWithNode:self.micMixer gain:0];
   }
   
-  if (!HBAudioKit.output || HBAudioKit.output != self.micMixer) {
+  if (!HBAudioKit.output || HBAudioKit.output != self.micBooster) {
     @try {
       [HBAudioKit disconnectAllInputs];
-      HBAudioKit.output = self.micMixer;
+      HBAudioKit.output = self.micBooster;
     } @catch (NSException *exception) {
       
     } @finally {
