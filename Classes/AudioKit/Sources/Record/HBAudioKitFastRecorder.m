@@ -102,16 +102,34 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
   }
   
   HBAKSettings.audioInputEnabled = true;
+  HBAKSettings.useBluetooth = true;
+  
   if (HBAKSettings.headPhonesPlugged) {
     // 头戴耳机不需要输出到手机扬声器，直接输出耳机的扬声器就行
-    HBAKSettings.useBluetooth = true;
     HBAKSettings.defaultToSpeaker = false;
+    HBAKSettings.disableAVAudioSessionCategoryManagement = false;
+    
+    NSError *error = nil;
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:&error];
+    
+    [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideNone error:&error];
+    
+    [[HBAudioSession sharedSession] setActive:YES];
+    NSLog(@"session error： %@", error);
+    
   } else {
     // 不带耳机，音乐需要输出到手机的扬声器，而不是听筒
     HBAKSettings.defaultToSpeaker = false;
-  }
+    HBAKSettings.disableAVAudioSessionCategoryManagement = true;
     
-  [[HBAudioSession sharedSession] setActive:YES];
+    NSError *error = nil;
+    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryPlayAndRecord withOptions:AVAudioSessionCategoryOptionMixWithOthers error:&error];
+    
+    [[AVAudioSession sharedInstance] overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:&error];
+    
+    [[HBAudioSession sharedSession] setActive:YES];
+    NSLog(@"session error： %@", error);
+  }
   
   self.bus = 0;
   self.recordBufferDuration = 16384/HBAKSettings.sampleRate;
