@@ -140,7 +140,6 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
   self.saveAudioFile = [[AVAudioFile alloc] initForWriting:saveURL settings:[HBAKSettings audioFormat].settings error:&error];
   
   //MARK: - 1. 麦克风
-  if (!_mic) {
     AVAudioFormat *audioFormat = nil;
     AVAudioFormat *currentFormat = [HBAudioKit.engine.inputNode inputFormatForBus:0];
     double sampleRate = [AVAudioSession sharedInstance].sampleRate;
@@ -163,9 +162,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
     
     // gain 控制麦克风的音量是否输入到扬声器
     self.micBooster = [[HBAKBooster alloc] initWithNode:self.micMixer gain:0];
-  }
-  
-  if (!HBAudioKit.output || HBAudioKit.output != self.micBooster) {
+    
     @try {
       [HBAudioKit disconnectAllInputs];
       HBAudioKit.output = self.micBooster;
@@ -174,7 +171,6 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
     } @finally {
       
     }
-  }
 }
 
 - (void)startRecordWithProcessingCallback:(RecorderProcessingCallback)processingCallback {
@@ -185,6 +181,9 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
   
   if (!HBAudioKit.engine.isRunning) {
     @try {
+        self.innerSaveMixNode = self.micMixer.avAudioNode;
+        [self innerMixerSatrtRecord];
+        
       NSError *error = nil;
       [HBAudioKit startAndReturnError:&error];
       if (error) {
@@ -196,9 +195,6 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
       
     }
   }
-  
-  self.innerSaveMixNode = self.micMixer.avAudioNode;
-  [self innerMixerSatrtRecord];
 }
 
 /// 停止所有录制操作
