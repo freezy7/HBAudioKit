@@ -35,6 +35,7 @@
 		6FD07F7E2C1A8D83004FFAC1 /* HBAudioKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07F6C2C1A8D83004FFAC1 /* HBAudioKit.m */; };
 		6FD07FB12C1A966F004FFAC1 /* libmp3lame in Frameworks */ = {isa = PBXBuildFile; productRef = 6FD07FB02C1A966F004FFAC1 /* libmp3lame */; };
 		6FD07FB42C1A9F93004FFAC1 /* HBAudioKitFastRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6FD07FB32C1A9F93004FFAC1 /* HBAudioKitFastRecorder.m */; };
+		6FFB86352C2D3AB300F32F98 /* TWFastRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FFB86342C2D3AB300F32F98 /* TWFastRecorder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,8 @@
 		6FD07F6B2C1A8D83004FFAC1 /* HBAKBooster.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAKBooster.m; sourceTree = "<group>"; };
 		6FD07F6C2C1A8D83004FFAC1 /* HBAudioKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAudioKit.m; sourceTree = "<group>"; };
 		6FD07FB32C1A9F93004FFAC1 /* HBAudioKitFastRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBAudioKitFastRecorder.m; sourceTree = "<group>"; };
+		6FFB86332C2D3AB300F32F98 /* HBAudioKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "HBAudioKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		6FFB86342C2D3AB300F32F98 /* TWFastRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TWFastRecorder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,12 +165,14 @@
 				6FD07EB42C199D5F004FFAC1 /* SceneDelegate.m */,
 				6FD07EB62C199D5F004FFAC1 /* ViewController.h */,
 				6FD07EB72C199D5F004FFAC1 /* ViewController.m */,
+				6FFB86342C2D3AB300F32F98 /* TWFastRecorder.swift */,
 				6FD07EB92C199D5F004FFAC1 /* Main.storyboard */,
 				6FD07EBC2C199D60004FFAC1 /* Assets.xcassets */,
 				6FD07EBE2C199D60004FFAC1 /* LaunchScreen.storyboard */,
 				6FD07EC12C199D60004FFAC1 /* Info.plist */,
 				6FD07EC22C199D60004FFAC1 /* main.m */,
 				6FD07F142C1A8C66004FFAC1 /* Classes */,
+				6FFB86332C2D3AB300F32F98 /* HBAudioKit-Bridging-Header.h */,
 			);
 			path = HBAudioKit;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 				TargetAttributes = {
 					6FD07EAC2C199D5F004FFAC1 = {
 						CreatedOnToolsVersion = 15.2;
+						LastSwiftMigration = 1600;
 					};
 				};
 			};
@@ -321,6 +327,7 @@
 				6FD07F7A2C1A8D83004FFAC1 /* HBAKAudioUnitBase.mm in Sources */,
 				6FD07F712C1A8D83004FFAC1 /* HBAKAbstractPlayer.m in Sources */,
 				6FD07F732C1A8D83004FFAC1 /* HBAKBoosterAudioUnit.m in Sources */,
+				6FFB86352C2D3AB300F32F98 /* TWFastRecorder.swift in Sources */,
 				6FD07F782C1A8D83004FFAC1 /* HBAudioSession.m in Sources */,
 				6FD07F792C1A8D83004FFAC1 /* HBBufferedAudioUnit.m in Sources */,
 				6FD07EB22C199D5F004FFAC1 /* AppDelegate.m in Sources */,
@@ -476,6 +483,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74FFGT6HP4;
@@ -495,6 +503,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.holiday.HBAudioKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HBAudioKit/HBAudioKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -504,6 +515,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 74FFGT6HP4;
@@ -523,6 +535,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.holiday.HBAudioKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "HBAudioKit/HBAudioKit-Bridging-Header.h";
+				SWIFT_VERSION = 6.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

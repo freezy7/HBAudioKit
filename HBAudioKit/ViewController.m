@@ -7,6 +7,7 @@
 
 #import "ViewController.h"
 #import "HBAudioKitFastRecorder.h"
+#import "HBAudioKit-Swift.h"
 
 @interface ViewController () {
     HBAudioKitFastRecorder *_fastRecord;
@@ -16,6 +17,8 @@
     NSString *_outputPath;
     
     AVAudioPlayer* digitalPlayer;
+    
+    TWFastRecorder *_twFastRecorder;
 }
 
 @end
@@ -27,16 +30,14 @@
     // Do any additional setup after loading the view.
     
     _fastRecord = [[HBAudioKitFastRecorder alloc] init];
+    
+    _twFastRecorder = [TWFastRecorder new];
 }
 
 - (IBAction)record:(id)sender {
     if (_isRecording) {
         _isRecording = false;
-        [_fastRecord stopRecorderOperationCompletion:^{
-            [self->_fastRecord exchangePCMToMP3Completion:^(BOOL success, NSString * _Nonnull outputPath) {
-                self->_outputPath = outputPath;
-            }];
-        }];
+        [_twFastRecorder stopRecording];
     } else {
         _isRecording = true;
         AVAuthorizationStatus videoAuthStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeAudio];
@@ -52,28 +53,42 @@
           return;
         }
         
-        [_fastRecord startRecordWithProcessingCallback:^(float lVol, unsigned long currentLength, unsigned long totalLength) {
-            
+        [_twFastRecorder startRecordingWithProgressBlock:^(double duration) {
+            NSLog(@"time: %.3f", duration);
+        } speechBlock:^(NSString * _Nonnull speechText) {
+            NSLog(@"%@", speechText);
         }];
     }
 }
 
 - (IBAction)play:(id)sender {
-    [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
-    [[AVAudioSession sharedInstance] setActive:true error:nil];
+    NSString *replaceString = [NSString stringWithFormat:@"%.0f.mp3", [[NSDate date] timeIntervalSince1970]];
+    NSString *outputPath = [_fastRecord.savePath stringByReplacingOccurrencesOfString:@"audio.pcm" withString:replaceString];
     
-    NSURL *soundURL = [NSURL fileURLWithPath:_outputPath];
-    
-    NSError *error;
-    digitalPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
-    if (error) {
-        NSLog(@"初始化音频播放器时发生错误: %@", [error localizedDescription]);
-    } else {
-        [digitalPlayer prepareToPlay];
-    }
-    digitalPlayer.numberOfLoops = 0; // 设置为负数表示无限循环
-    
-    [digitalPlayer play];
+    [HBAudioKitFastRecorder exchangePCMToMP3WithFilePath:_fastRecord.savePath resultPath:outputPath completion:^(BOOL success) {
+        if (success) {
+            _outputPath = outputPath;
+            
+            NSLog(@"_outputPath: %@", _outputPath);
+            
+            [[AVAudioSession sharedInstance] setCategory:AVAudioSessionCategoryAmbient error:nil];
+            [[AVAudioSession sharedInstance] setActive:true error:nil];
+            
+            NSURL *soundURL = [NSURL fileURLWithPath:_outputPath];
+            
+            NSError *error;
+            digitalPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:soundURL error:&error];
+            if (error) {
+                NSLog(@"初始化音频播放器时发生错误: %@", [error localizedDescription]);
+            } else {
+                [digitalPlayer prepareToPlay];
+            }
+            digitalPlayer.numberOfLoops = 0; // 设置为负数表示无限循环
+            
+            [digitalPlayer play];
+            
+        }
+    }];
 }
 
 @end

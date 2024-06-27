@@ -102,9 +102,10 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
   }
   
   HBAKSettings.audioInputEnabled = true;
-  HBAKSettings.useBluetooth = true;
   
   if (HBAKSettings.headPhonesPlugged) {
+      HBAKSettings.useBluetooth = true;
+      
     // 头戴耳机不需要输出到手机扬声器，直接输出耳机的扬声器就行
     HBAKSettings.defaultToSpeaker = false;
     HBAKSettings.disableAVAudioSessionCategoryManagement = false;
@@ -481,7 +482,7 @@ typedef NS_ENUM(NSUInteger, HBRecorderDeviceState) {
         lame_t lame = lame_init();
         // 设置lame mp3编码的采样率 / 声道数 / 比特率
         double sampleRate = audioFormat.sampleRate;
-        int channelCount = 2;
+        int channelCount = audioFormat.channelCount;
         lame_set_in_samplerate(lame, sampleRate);
         lame_set_num_channels(lame, channelCount);
         lame_set_out_samplerate(lame, 16000);
